@@ -40,3 +40,4 @@ class Contact:
         self.aday = aday
         self.amonth = amonth
         self.ayear = ayear
+

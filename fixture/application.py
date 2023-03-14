@@ -12,10 +12,16 @@ class Application:
         self.contact = ContactHelper(self)
 
 
+    def open_group_page(self):
+        # open group page
+        wd = self.wd
+        wd.get("http://localhost/addressbook/group.php")
+
     def open_home_page(self):
         # open home page
         wd = self.wd
-        wd.get("http://localhost/addressbook/group.php")
+        wd.get("http://localhost/addressbook/index.php")
+
 
     def destroy (self):
         self.wd.quit()
