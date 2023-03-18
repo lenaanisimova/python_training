@@ -31,14 +31,12 @@ def test_add_contact(app):
                                       aday="13",
                                       amonth="November",
                                       ayear="1993"))
-    app.session.logout()
 
 def test_add_empty_contact(app):
-    app.session.login(username="admin", password="secret")
     app.contact.add_contact(Contact(firstname="", middlename="", nickname="", title="", company="", address="", home="",
                          mobile="", work="", fax="", email="", email2="", email3="", homepage="", bday="", bmonth="-", byear="", aday="",
                          amonth="-", ayear=""))
-    app.session.logout()
+
 
 
 
