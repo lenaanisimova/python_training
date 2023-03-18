@@ -11,7 +11,6 @@ def app(request):
     return fixture
 
 def test_add_contact(app):
-    app.session.login(username="admin", password="secret")
     app.contact.add_contact(Contact(firstname="Lena",
                             middlename="Anisimova",
                                     nickname="lenaanisimova",
