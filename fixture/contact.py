@@ -2,6 +2,13 @@ class ContactHelper:
     def __init__(self, app):
         self.app = app
 
+    def open_home_page(self):
+        # open home page
+        wd = self.wd
+        if not (wd.current_url.endswith("index.php") and len(wd.find_elements_by_name("delete")) > 0):
+            return
+        wd.find_element_by_link_text("home page").click()
+
     def add_contact(self, contact):
         # add new contact
         wd = self.app.wd
