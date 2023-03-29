@@ -75,3 +75,7 @@ class GroupHelper:
         # submit modification
         self.return_group()
 
+    def count (self):
+        wd = self.app.wd
+        self.app.open_group_page()
+        return len(wd.find_elements_by_name("selected[]"))
