@@ -28,7 +28,6 @@ class ContactHelper:
         wd = self.app.wd
         self.app.open_home_page()
         # select first contact
-        wd.find_element_by_name("selected[]").click()
         self.select_contact_by_index(index)
         # aprove delete contact
         self.accept_next_alert = True
