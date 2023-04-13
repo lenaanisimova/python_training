@@ -1,4 +1,4 @@
-
+#правка 13.04
 from model.group import Group
 from random import randrange
 def test_modify_group_name(app):
