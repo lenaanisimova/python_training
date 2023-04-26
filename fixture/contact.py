@@ -59,16 +59,16 @@ class ContactHelper:
         #firstname
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
-        wd.find_element_by_name("firstname").send_keys("Lena123456")
+        wd.find_element_by_name("firstname").send_keys("Lena")
         # lastname
         wd.find_element_by_name("lastname").click()
         wd.find_element_by_name("lastname").clear()
-        wd.find_element_by_name("lastname").send_keys("Anisimova12")
+        wd.find_element_by_name("lastname").send_keys("Anisimova")
         # address
         wd.find_element_by_name("address").click()
         wd.find_element_by_name("address").clear()
         wd.find_element_by_name("address").send_keys("Выборгская, 29")
-        # homeephone
+        # homephone
         wd.find_element_by_name("home").click()
         wd.find_element_by_name("home").clear()
         wd.find_element_by_name("home").send_keys(contact.homephone)
@@ -169,7 +169,7 @@ class ContactHelper:
         mobilephone = re.search("M: (.*)", text).group(1)
         workphone = re.search("W: (.*)", text).group(1)
 
-        return Contact(homephone=homephone, mobilephone=mobilephone,
+        return Contact(firstname=firstname, lastname=lastname, id=id, homephone=homephone, mobilephone=mobilephone,
                        workphone=workphone)
 
 

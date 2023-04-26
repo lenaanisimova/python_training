@@ -18,7 +18,7 @@ def test_edit_first_contact(app):
                       homepage="1234", bday="2", bmonth="May", byear="1992")
     app.contact.contact_change_by_index(index, contact)
     contact.id = old_contacts[index].id
-    assert len(old_contacts) == app.contact.count()
+    assert len(old_contacts) == app.contact.count_contact()
     new_contacts = app.contact.get_contact_list()
     old_contacts[index] = contact
     assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
