@@ -59,15 +59,15 @@ class ContactHelper:
         #firstname
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
-        wd.find_element_by_name("firstname").send_keys("Lena")
+        wd.find_element_by_name("firstname").send_keys(contact.firstname)
         # lastname
         wd.find_element_by_name("lastname").click()
         wd.find_element_by_name("lastname").clear()
-        wd.find_element_by_name("lastname").send_keys("Anisimova")
+        wd.find_element_by_name("lastname").send_keys(contact.lastname)
         # address
         wd.find_element_by_name("address").click()
         wd.find_element_by_name("address").clear()
-        wd.find_element_by_name("address").send_keys("Выборгская, 29")
+        wd.find_element_by_name("address").send_keys(contact.address)
         # homephone
         wd.find_element_by_name("home").click()
         wd.find_element_by_name("home").clear()
@@ -84,7 +84,7 @@ class ContactHelper:
         # email
         wd.find_element_by_name("email").click()
         wd.find_element_by_name("email").clear()
-        wd.find_element_by_name("email").send_keys("lena@gmail.com")
+        wd.find_element_by_name("email").send_keys(contact.email)
 
         wd.find_element_by_name("homepage").click()
         wd.find_element_by_name("homepage").clear()

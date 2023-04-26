@@ -3,12 +3,12 @@ from model.group import Group
 class GroupHelper:
     def __init__(self, app):
         self.app = app
+
     def open_group_page(self):
         # open group page
-        wd = self.wd
+        wd = self.app.wd
         if not (wd.current_url.endswith("group.php") and len(wd.find_elements_by_name("new")) > 0):
-            return
-        wd.find_element_by_link_text("groups").click()
+            wd.find_element_by_link_text("groups").click()
 
     def return_group(self):
         # return to groups page
@@ -40,7 +40,7 @@ class GroupHelper:
             wd.find_element_by_name(field_name).send_keys(text)
 
     def fill_group_form(self, group):
-        wd = self.app.wd
+        # wd = self.app.wd
         self.change_field_value("group_name", group.name)
         self.change_field_value("group_header", group.header)
         self.change_field_value("group_footer", group.footer)
@@ -65,20 +65,20 @@ class GroupHelper:
        wd = self.app.wd
        wd.find_elements_by_name("selected[]")[index].click()
 
-    def edit_first_group(self):
-        wd = self.app.wd
-        self.app.open_group_page()
+    #def edit_first_group(self):
+        #wd = self.app.wd
+        #self.app.open_group_page()
         #select first group
-        wd.find_element_by_name("selected[]").click()
+        #wd.find_element_by_name("selected[]").click()
         #submit edition
-        wd.find_element_by_name("edit").click()
-        wd.find_element_by_xpath("//div[@id='content']/form/input[6]").click()
-        wd.find_element_by_name("group_name").click()
-        wd.find_element_by_name("group_name").clear()
-        wd.find_element_by_name("group_name").send_keys("qwertyu123456")
-        wd.find_element_by_name("update").click()
-        self.return_group()
-        self.group_cache = None
+        #wd.find_element_by_name("edit").click()
+        #wd.find_element_by_xpath("//div[@id='content']/form/input[6]").click()
+        #wd.find_element_by_name("group_name").click()
+        #wd.find_element_by_name("group_name").clear()
+        #wd.find_element_by_name("group_name").send_keys("qwertyu123456")
+        #wd.find_element_by_name("update").click()
+        #self.return_group()
+        #self.group_cache = None
 
     def modify_first_group(self):
         self.modify_group_by_index(0)
@@ -102,6 +102,7 @@ class GroupHelper:
         return len(wd.find_elements_by_name("selected[]"))
 
     group_cache = None
+
     def get_group_list(self):
         if self.group_cache is None:
             wd = self.app.wd
